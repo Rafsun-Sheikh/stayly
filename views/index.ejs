@@ -1,0 +1,15 @@
+<%- include('partials/head', { title: 'Find a place to stay', q }) %>
+<nav class="chips" aria-label="Categories">
+  <% ['All', ...categories].forEach(c => { const active = (q.category || 'All') === c; %>
+    <a class="chip <%= active ? 'active' : '' %>" href="/?category=<%= c %>"><%= c %></a>
+  <% }) %>
+</nav>
+<section class="container">
+  <% if (listings.length) { %>
+    <p class="muted result-count"><%= listings.length %> stay<%= listings.length > 1 ? 's' : '' %> found</p>
+    <div class="grid"><% listings.forEach(l => { %><%- include('partials/card', { l }) %><% }) %></div>
+  <% } else { %>
+    <div class="empty"><h2>No stays match that search</h2><p>Try a different destination or raise your price limit.</p><a class="btn" href="/">Clear filters</a></div>
+  <% } %>
+</section>
+<%- include('partials/foot') %>

@@ -1,0 +1,15 @@
+const base = {
+  amenities: ['Wi-Fi', 'Air conditioning', 'Kitchen', 'Free parking', 'Backup power', 'Breakfast included']
+};
+module.exports = [
+  { id: 1, title: 'Beachfront cottage with sea view', location: "Cox's Bazar", category: 'Beach', price: 85, rating: 4.9, reviews: 212, guests: 4, bedrooms: 2, beds: 3, baths: 1, host: 'Tania', seed: 'coxs', desc: 'Wake up to waves. Two minutes on foot to Laboni Beach, with a veranda built for evening tea.' },
+  { id: 2, title: 'Tea garden bungalow', location: 'Sreemangal, Sylhet', category: 'Countryside', price: 62, rating: 4.8, reviews: 134, guests: 4, bedrooms: 2, beds: 2, baths: 1, host: 'Rahim', seed: 'tea', desc: 'A colonial-style bungalow surrounded by rolling tea estates and rain-fed forest trails.' },
+  { id: 3, title: 'Hilltop cloud cabin', location: 'Bandarban', category: 'Mountain', price: 74, rating: 4.9, reviews: 98, guests: 3, bedrooms: 1, beds: 2, baths: 1, host: 'Ching', seed: 'hill', desc: 'Sit above the clouds. Bamboo cabin with a private deck facing the Sangu valley.' },
+  { id: 4, title: 'Riverside houseboat', location: 'Sundarbans, Khulna', category: 'Unique', price: 120, rating: 4.7, reviews: 76, guests: 6, bedrooms: 3, beds: 5, baths: 2, host: 'Mizan', seed: 'boat', desc: 'Sleep on the water at the edge of the mangrove forest, with guided boat tours included.' },
+  { id: 5, title: 'Modern loft in Gulshan', location: 'Gulshan, Dhaka', category: 'City', price: 58, rating: 4.6, reviews: 305, guests: 2, bedrooms: 1, beds: 1, baths: 1, host: 'Nabila', seed: 'loft', desc: 'A bright loft with fast Wi-Fi and a workspace, minutes from cafes and the lake.' },
+  { id: 6, title: 'Heritage courtyard house', location: 'Old Dhaka', category: 'Unique', price: 49, rating: 4.8, reviews: 121, guests: 5, bedrooms: 3, beds: 4, baths: 2, host: 'Farhan', seed: 'old', desc: 'A restored zamindar-era home with a shaded courtyard and a rooftop view of the old city.' },
+  { id: 7, title: 'Lakeside glass villa', location: 'Rangamati', category: 'Lake', price: 95, rating: 4.9, reviews: 167, guests: 4, bedrooms: 2, beds: 2, baths: 2, host: 'Ananda', seed: 'lake', desc: 'Floor-to-ceiling windows over Kaptai Lake and a private jetty for sunrise paddling.' },
+  { id: 8, title: 'Island eco-hut', location: "St. Martin's Island", category: 'Beach', price: 70, rating: 4.7, reviews: 89, guests: 2, bedrooms: 1, beds: 1, baths: 1, host: 'Salma', seed: 'island', desc: 'A solar-powered hut steps from clear water and coral shallows.' },
+  { id: 9, title: 'Farm stay with pond and orchard', location: 'Bogura', category: 'Countryside', price: 40, rating: 4.5, reviews: 54, guests: 6, bedrooms: 3, beds: 4, baths: 2, host: 'Kabir', seed: 'farm', desc: 'Pick your own mangoes, fish in the pond, and eat village-style meals cooked by the host family.' },
+  { id: 10, title: 'Forest-edge treehouse', location: 'Lawachara, Moulvibazar', category: 'Mountain', price: 80, rating: 4.8, reviews: 63, guests: 2, bedrooms: 1, beds: 1, baths: 1, host: 'Joya', seed: 'tree', desc: 'A treehouse in the canopy beside Lawachara National Park, with gibbon calls at dawn.' }
+].map(l => ({ ...base, ...l }));

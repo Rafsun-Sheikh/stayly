@@ -1,0 +1,37 @@
+<%- include('partials/head', { title: l.title, q }) %>
+<section class="container listing">
+  <h1><%= l.title %></h1>
+  <p class="muted">★ <%= l.rating %> (<%= l.reviews %> reviews) · <%= l.location %>, Bangladesh</p>
+  <div class="gallery">
+    <% for (let i = 1; i <= 5; i++) { %><img src="https://picsum.photos/seed/<%= l.seed %><%= i %>/800/600" alt="<%= l.title %> photo <%= i %>"><% } %>
+  </div>
+  <div class="detail-layout">
+    <div>
+      <h2>Hosted by <%= l.host %></h2>
+      <p class="muted"><%= l.guests %> guests · <%= l.bedrooms %> bedrooms · <%= l.beds %> beds · <%= l.baths %> bath<%= l.baths > 1 ? 's' : '' %></p>
+      <hr>
+      <p><%= l.desc %></p>
+      <hr>
+      <h2>What this place offers</h2>
+      <ul class="amenities"><% l.amenities.forEach(a => { %><li><%= a %></li><% }) %></ul>
+    </div>
+    <aside class="reserve">
+      <form id="reserveForm" method="post" action="/listings/<%= l.id %>/reserve" data-price="<%= l.price %>">
+        <p><strong class="big">$<%= l.price %></strong> night</p>
+        <% if (error) { %><p class="error" role="alert"><%= error %></p><% } %>
+        <div class="dates">
+          <label>Check-in<input type="date" name="checkin" required></label>
+          <label>Check-out<input type="date" name="checkout" required></label>
+        </div>
+        <label>Guests<input type="number" name="guests" min="1" max="<%= l.guests %>" value="1" required></label>
+        <button class="btn block" type="submit">Reserve</button>
+        <div id="totals" hidden>
+          <p class="row"><span id="nightsLabel"></span><span id="sub"></span></p>
+          <p class="row"><span>Service fee</span><span id="fee"></span></p>
+          <p class="row total"><span>Total</span><span id="total"></span></p>
+        </div>
+      </form>
+    </aside>
+  </div>
+</section>
+<%- include('partials/foot') %>

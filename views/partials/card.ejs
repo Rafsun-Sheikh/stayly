@@ -1,0 +1,14 @@
+<article class="card" data-id="<%= l.id %>">
+  <a href="/listings/<%= l.id %>" class="card-img">
+    <img src="https://picsum.photos/seed/<%= l.seed %>1/600/450" alt="<%= l.title %>" loading="lazy">
+  </a>
+  <button class="heart" data-id="<%= l.id %>" aria-label="Save to wishlist" aria-pressed="false">
+    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 21s-7-4.6-9.3-9C1.1 8.8 2.9 5 6.4 5c2 0 3.6 1.1 4.6 2.7h2C14 6.1 15.6 5 17.6 5c3.5 0 5.3 3.8 3.7 7-2.3 4.4-9.3 9-9.3 9z"/></svg>
+  </button>
+  <a href="/listings/<%= l.id %>" class="card-body">
+    <div class="row"><h3><%= l.location %></h3><span class="rate">★ <%= l.rating %></span></div>
+    <p class="muted"><%= l.title %></p>
+    <p class="muted"><%= l.bedrooms %> bedroom<%= l.bedrooms > 1 ? 's' : '' %> · up to <%= l.guests %> guests</p>
+    <p><strong>$<%= l.price %></strong> night</p>
+  </a>
+</article>

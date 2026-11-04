@@ -1,0 +1,14 @@
+<%- include('partials/head', { title: 'Booking confirmed', q }) %>
+<section class="container narrow">
+  <h1>Your stay is reserved</h1>
+  <p class="muted">You're going to <%= l.location %>.</p>
+  <div class="summary">
+    <h2><%= l.title %></h2>
+    <p><%= booking.checkin %> to <%= booking.checkout %> · <%= booking.guests %> guest<%= booking.guests > 1 ? 's' : '' %></p>
+    <p class="row"><span>$<%= l.price %> × <%= booking.nights %> nights</span><span>$<%= booking.subtotal %></span></p>
+    <p class="row"><span>Service fee</span><span>$<%= booking.fee %></span></p>
+    <p class="row total"><span>Total</span><span>$<%= booking.total %></span></p>
+  </div>
+  <a class="btn" href="/">Keep exploring</a>
+</section>
+<%- include('partials/foot') %>

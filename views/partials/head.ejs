@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= typeof title !== 'undefined' ? title + ' · Stayly' : 'Stayly · Find a place to stay' %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+  <a class="logo" href="/">stayly</a>
+  <form class="search" action="/" method="get" role="search">
+    <label>Where<input name="where" placeholder="Search destinations" value="<%= q.where || '' %>"></label>
+    <label>Guests<input name="guests" type="number" min="1" max="10" placeholder="Add guests" value="<%= q.guests || '' %>"></label>
+    <label>Max price<input name="max" type="number" min="10" step="5" placeholder="$ per night" value="<%= q.max || '' %>"></label>
+    <button type="submit" aria-label="Search">Search</button>
+  </form>
+  <nav><a href="/wishlist">Wishlist <span id="wishCount" class="badge" hidden>0</span></a></nav>
+</header>
+<main>

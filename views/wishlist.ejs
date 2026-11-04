@@ -1,0 +1,7 @@
+<%- include('partials/head', { title: 'Wishlist', q }) %>
+<section class="container">
+  <h1>Your wishlist</h1>
+  <div class="grid" id="wishGrid"><% listings.forEach(l => { %><%- include('partials/card', { l }) %><% }) %></div>
+  <div class="empty" id="wishEmpty" hidden><h2>Nothing saved yet</h2><p>Tap the heart on any stay to save it here.</p><a class="btn" href="/">Browse stays</a></div>
+</section>
+<%- include('partials/foot') %>
